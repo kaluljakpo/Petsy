@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="hr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Petsy</title>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="logo">
+				<span class="emoji">🐾🐾</span>
+				<span class="brand">Petsy</span>
+			</div>
+
+			<button
+				class="menu-toggle"
+				aria-label="Toggle menu"
+				onclick="toggleMenu()"
+			>
+				☰
+			</button>
+
+			<ul class="nav-links" id="nav-menu">
+				<li><a href="#pocetna">Početna</a></li>
+				<li><a href="#proizvodi">Proizvodi</a></li>
+				<li><a href="#onama">O nama</a></li>
+				<li><a href="#kontakt">Kontakt</a></li>
+			</ul>
+		</nav>
+
+		<section id="pocetna" class="hero">
+			<div class="overlay"></div>
+			<div class="hero-content">
+				<h1>Vaš ljubimac na torbi!</h1>
+				<p>Jednostavne platnene torbe sa printom vašeg kućnog ljubimca</p>
+				<a href="#proizvodi" class="cta-button">Pregledaj proizvode</a>
+			</div>
+		</section>
+
+		<section class="features">
+			<div class="feature-box">
+				<div class="emoji">🎨</div>
+				<h3>Personalizirano</h3>
+				<p>Svaka torba je jedinstvena sa slikom vašeg ljubimca.</p>
+			</div>
+			<div class="feature-box">
+				<div class="emoji">🌿</div>
+				<h3>Eko materijal</h3>
+				<p>100% pamučne torbe, prijateljske prema okolišu.</p>
+			</div>
+			<div class="feature-box">
+				<div class="emoji">🚚</div>
+				<h3>Brza dostava</h3>
+				<p>Brza dostava za naručivanje preko 25€.</p>
+			</div>
+		</section>
+
+		<section id="proizvodi" class="products">
+			<h2>Naši proizvodi</h2>
+			<p class="section-subtitle">Odaberite savršenu torbu za vašeg ljubimca</p>
+			<div class="product-grid">
+				<div class="product-card">
+					<img src="img/torba1.jpg" alt="Torba 1" />
+					<h3>Torba s vašim ljubimcem</h3>
+					<p class="price">25€</p>
+					<a href="#" class="btn">Detalji</a>
+				</div>
+				<div class="product-card">
+					<img src="img/torba2.jpg" alt="Torba 2" />
+					<h3>Torba s vašim ljubimcem</h3>
+					<p class="price">25€</p>
+					<a href="#" class="btn">Detalji</a>
+				</div>
+				<div class="product-card">
+					<img src="img/torba3.jpg" alt="Torba 3" />
+					<h3>Torba s vašim ljubimcem</h3>
+					<p class="price">25€</p>
+					<a href="#" class="btn">Detalji</a>
+				</div>
+			</div>
+		</section>
+
+		<script>
+			function toggleMenu() {
+				const menu = document.getElementById('nav-menu');
+				menu.classList.toggle('active');
+			}
+		</script>
+
+		<section id="onama" class="about">
+			<div class="about-text">
+				<h2>O Petsy</h2>
+				<p>
+					Vjerujemo da svaki kućni ljubimac zaslužuje biti proslavljen. Naše
+					platnene torbe su više od običnih torbi – one su izraz vaše ljubavi
+					prema vašem četveronožnom prijatelju.
+				</p>
+				<p>
+					Koristimo najkvalitetniju pamučnu tkaninu i najnovije tehnike
+					printanja kako bismo osigurali da vaša torba bude izdržljiva i
+					prekrasna.
+				</p>
+			</div>
+			<div class="about-image"><img src="RingoAI.png" Moj pas /></div>
+		</section>
+
+		<section id="kontakt" class="contact">
+			<h2>Kontaktirajte nas</h2>
+			<p>Imate pitanja? Rado ćemo vam pomoći!</p>
+
+			<div class="contact-form">
+				<form
+					name="kontakt"
+					method="POST"
+					data-netlify="true"
+					enctype="multipart/form-data"
+					netlify-honeypot="bot-field"
+				>
+					<!-- Obavezno hidden polje za Netlify -->
+					<input type="hidden" name="form-name" value="kontakt" />
+
+					<!-- Honeypot za spam -->
+					<p style="display: none">
+						<label>Ne ispunjavaj ovo: <input name="bot-field" /></label>
+					</p>
+
+					<div class="form-row">
+						<div class="form-group">
+							<label for="ime">Ime</label>
+							<input type="text" id="ime" name="ime" required />
+						</div>
+						<div class="form-group">
+							<label for="prezime">Prezime</label>
+							<input type="text" id="prezime" name="prezime" required />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="poruka">Poruka</label>
+						<textarea id="poruka" name="poruka" rows="5" required></textarea>
+					</div>
+
+					<div class="form-group file-upload">
+						<label for="slika" class="custom-file-label">Priložite sliku</label>
+						<input type="file" id="slika" name="slika" accept="image/*" />
+						<span id="file-name">Nije odabrana nijedna datoteka</span>
+					</div>
+
+					<div class="form-button">
+						<button type="submit" class="btn-primary">Pošalji poruku</button>
+					</div>
+				</form>
+			</div>
+		</section>
+
+		<footer class="footer">© 2025 Petsy. Sva prava zadržana.</footer>
+	</body>
+
+	<script>
+		const fileInput = document.getElementById('slika');
+		const fileNameSpan = document.getElementById('file-name');
+
+		fileInput.addEventListener('change', () => {
+			if (fileInput.files.length > 0) {
+				fileNameSpan.textContent = fileInput.files[0].name;
+			} else {
+				fileNameSpan.textContent = 'Nije odabrana nijedna datoteka';
+			}
+		});
+	</script>
+</html>
