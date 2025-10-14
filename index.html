@@ -110,53 +110,45 @@
 		</section>
 
 		<section id="kontakt" class="contact">
-			<h2>Kontaktirajte nas</h2>
-			<p>Imate pitanja? Rado ćemo vam pomoći!</p>
+  <h2>Kontaktirajte nas</h2>
+  <p>Imate pitanja? Rado ćemo vam pomoći!</p>
 
-			<div class="contact-form">
-				<form
-					name="kontakt"
-					method="POST"
-					data-netlify="true"
-					enctype="multipart/form-data"
-					netlify-honeypot="bot-field"
-				>
-					<!-- Obavezno hidden polje za Netlify -->
-					<input type="hidden" name="form-name" value="kontakt" />
+  <div class="contact-form">
+    <form name="kontakt" method="POST" data-netlify="true" enctype="multipart/form-data" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="kontakt" />
+      <p style="display:none">
+        <label>Ne ispunjavaj ovo: <input name="bot-field" /></label>
+      </p>
 
-					<!-- Honeypot za spam -->
-					<p style="display: none">
-						<label>Ne ispunjavaj ovo: <input name="bot-field" /></label>
-					</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="ime">Ime</label>
+          <input type="text" id="ime" name="ime" required />
+        </div>
+        <div class="form-group">
+          <label for="prezime">Prezime</label>
+          <input type="text" id="prezime" name="prezime" required />
+        </div>
+      </div>
 
-					<div class="form-row">
-						<div class="form-group">
-							<label for="ime">Ime</label>
-							<input type="text" id="ime" name="ime" required />
-						</div>
-						<div class="form-group">
-							<label for="prezime">Prezime</label>
-							<input type="text" id="prezime" name="prezime" required />
-						</div>
-					</div>
+      <div class="form-group">
+        <label for="poruka">Poruka</label>
+        <textarea id="poruka" name="poruka" rows="5" required></textarea>
+      </div>
 
-					<div class="form-group">
-						<label for="poruka">Poruka</label>
-						<textarea id="poruka" name="poruka" rows="5" required></textarea>
-					</div>
+      <div class="form-group file-upload">
+        <label for="slika" class="custom-file-label">Priložite sliku</label>
+        <input type="file" id="slika" name="slika" accept="image/*" />
+        <span id="file-name">Nije odabrana nijedna datoteka</span>
+      </div>
 
-					<div class="form-group file-upload">
-						<label for="slika" class="custom-file-label">Priložite sliku</label>
-						<input type="file" id="slika" name="slika" accept="image/*" />
-						<span id="file-name">Nije odabrana nijedna datoteka</span>
-					</div>
+      <div class="form-button">
+        <button type="submit" class="btn-primary">Pošalji poruku</button>
+      </div>
+    </form>
+  </div>
+</section>
 
-					<div class="form-button">
-						<button type="submit" class="btn-primary">Pošalji poruku</button>
-					</div>
-				</form>
-			</div>
-		</section>
 
 		<footer class="footer">© 2025 Petsy. Sva prava zadržana.</footer>
 	</body>
